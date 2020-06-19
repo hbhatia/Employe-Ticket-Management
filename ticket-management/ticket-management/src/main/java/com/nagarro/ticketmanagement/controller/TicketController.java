@@ -39,6 +39,7 @@ public class TicketController {
 	@GetMapping("/getAllTicketsByDepartmentId/{deptId}")
 	public ResponseEntity<List<Ticket>> getAllTicketsByDepartmentId(@PathVariable Long deptId) {
 		try {
+			System.out.println("Harsh");
 			List<Ticket> ticketLst = ticketService.getAllTicketsByDepartmentId(deptId);
 				return new ResponseEntity<List<Ticket>>(ticketLst,HttpStatus.OK);
 		}
