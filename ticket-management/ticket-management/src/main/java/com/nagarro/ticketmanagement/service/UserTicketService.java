@@ -3,7 +3,7 @@ package com.nagarro.ticketmanagement.service;
 import java.util.List;
 import java.util.Optional;
 
-import com.nagarro.ticketmanagement.dto.UserTicketDto;
+import com.nagarro.ticketmanagement.dtos.UserTicketDto;
 import com.nagarro.ticketmanagement.entity.UserTicket;
 
 public interface UserTicketService {
@@ -17,4 +17,6 @@ public interface UserTicketService {
 	UserTicket createUserTicket(UserTicket userTicket);
 
 	UserTicket mapAndCreateUserTicket(UserTicketDto userTicketDto);
+
+	List<UserTicket> findAllUserTicketByUser();
 }

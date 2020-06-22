@@ -1,4 +1,4 @@
-package com.nagarro.ticketmanagement.dto;
+package com.nagarro.ticketmanagement.dtos;
 
 import com.nagarro.ticketmanagement.enums.TicketPriority;
 import com.nagarro.ticketmanagement.enums.TicketStatus;

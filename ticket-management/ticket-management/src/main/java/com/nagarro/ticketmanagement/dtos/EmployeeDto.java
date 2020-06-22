@@ -1,44 +1,23 @@
-package com.nagarro.ticketmanagement.entity;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
-import com.sun.istack.NotNull;
+package com.nagarro.ticketmanagement.dtos;
 
 /**
  * @author harshitbhatia
  *
  */
-@Entity
-public class Employee {
+public class EmployeeDto {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "emp_id")
 	private Long empId;
-
-	@Column(name = "emp_first_name")
+	
 	private String empFirstName;
-
-	@Column(name = "emp_last_name")
+	
 	private String empLastName;
-
-	@Column(name = "emp_email")
+	
 	private String empEmail;
-
-	@Column(name = "is_emp_active")
+	
 	private boolean isEmpActive;
-
-//	unique = true, 
-	@Column(name = "user_name")
-	@NotNull
+	
 	private String userName;
 
-	@Column(name = "user_passwd")
-	@NotNull
 	private String userPasswd;
 
 	/**
@@ -138,5 +117,4 @@ public class Employee {
 	public void setUserPasswd(String userPasswd) {
 		this.userPasswd = userPasswd;
 	}
-
 }

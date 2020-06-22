@@ -23,10 +23,6 @@ public class UserTicket {
 	@Column(name = "id")
 	private Long id;
 
-	/*
-	 * @Column(name = "created_date") private Date createdDate;
-	 */
-
 	@Column(name = "ticket_status")
 	private TicketStatus ticketStatus;
 

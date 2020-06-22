@@ -1,4 +1,4 @@
-package com.nagarro.ticketmanagement.dto;
+package com.nagarro.ticketmanagement.dtos;
 
 public class TicketDto {
 

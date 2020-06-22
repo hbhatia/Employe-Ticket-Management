@@ -2,15 +2,12 @@ package com.nagarro.ticketmanagement.enums;
 
 public enum TicketPriority {
 
-	NORMAL("NORMAL", 1), URGENT("URGENT", 2), IMEEDIATE("IMEEDIATE", 3);
+	NORMAL("NORMAL"), URGENT("URGENT"), IMEEDIATE("IMEEDIATE");
 
 	private String guiValue;
 
-	private int guiId;
-
-	TicketPriority(String guiValue, int guiId) {
+	TicketPriority(String guiValue) {
 		this.guiValue = guiValue;
-		this.guiId = guiId;
 	}
 
 	TicketPriority() {

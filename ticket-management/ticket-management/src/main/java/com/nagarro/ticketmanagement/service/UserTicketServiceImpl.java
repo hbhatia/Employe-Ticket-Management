@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.nagarro.ticketmanagement.dto.UserTicketDto;
+import com.nagarro.ticketmanagement.dtos.UserTicketDto;
 import com.nagarro.ticketmanagement.entity.Ticket;
 import com.nagarro.ticketmanagement.entity.UserTicket;
 import com.nagarro.ticketmanagement.repository.UserTicketRepository;
@@ -51,5 +51,10 @@ public class UserTicketServiceImpl implements UserTicketService {
 
 	public UserTicket saveUserTicket(UserTicket userTicket) {
 		return userTicketRepository.save(userTicket);
+	}
+
+	@Override
+	public List<UserTicket> findAllUserTicketByUser() {
+		return userTicketRepository.findAll();
 	}
 }

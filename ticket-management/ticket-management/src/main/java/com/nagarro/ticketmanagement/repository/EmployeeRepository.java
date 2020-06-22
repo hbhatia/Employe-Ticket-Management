@@ -8,4 +8,9 @@ import com.nagarro.ticketmanagement.entity.Employee;
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee, Long>{
 
+	Employee findByUserName(String userName);
+	
+	Boolean existsByUserName(String username);
+
+	Boolean existsByEmpEmail(String email);
 }

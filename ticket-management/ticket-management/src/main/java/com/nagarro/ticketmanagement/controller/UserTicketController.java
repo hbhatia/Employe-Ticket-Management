@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import com.nagarro.ticketmanagement.dto.UserTicketDto;
+import com.nagarro.ticketmanagement.dtos.UserTicketDto;
 import com.nagarro.ticketmanagement.entity.UserTicket;
 import com.nagarro.ticketmanagement.service.UserTicketService;
 
@@ -77,6 +77,13 @@ public class UserTicketController {
 		 * ResponseEntity<UserTicket>(createdUserTicket, HttpStatus.CREATED); } return
 		 * new ResponseEntity<UserTicket>(HttpStatus.BAD_REQUEST);
 		 */
+	}
+	
+	@GetMapping("/viewAllUserTickets")
+	public ResponseEntity<List<UserTicket>> viewAllUserTickets() {
+		List<UserTicket> userTicketLst=new ArrayList<UserTicket>();
+		userTicketLst=userTicketService.findAllUserTicketByUser();
+		return new ResponseEntity<List<UserTicket>>(userTicketLst,HttpStatus.OK);
 	}
 	
 }
