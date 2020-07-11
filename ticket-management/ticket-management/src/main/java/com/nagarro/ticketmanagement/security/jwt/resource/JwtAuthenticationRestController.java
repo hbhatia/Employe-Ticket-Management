@@ -30,6 +30,7 @@ import com.nagarro.ticketmanagement.security.jwt.JwtUserDetails;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
+@RequestMapping("/api/auth/")
 public class JwtAuthenticationRestController {
 
 	@Value("${jwt.http.request.header}")
@@ -47,7 +48,7 @@ public class JwtAuthenticationRestController {
 	@Autowired
 	private EmployeeRepository employeeRepo;
 
-	@RequestMapping(value = "${jwt.get.token.uri}", method = RequestMethod.POST)
+	@RequestMapping(value = "authenticate", method = RequestMethod.POST)
 	public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtTokenRequest authenticationRequest)
 			throws AuthenticationException {
 
@@ -94,7 +95,7 @@ public class JwtAuthenticationRestController {
 		emp.setEmpLastName(signUpRequest.getEmpLastName());
 		emp.setUserName(signUpRequest.getUserName());
 		emp.setUserPasswd(jwtTokenUtil.generateToken(
-				new JwtUserDetails(null, signUpRequest.getUserName(), signUpRequest.getUserPasswd(), null)));
+				new JwtUserDetails(null, signUpRequest.getUserName(), signUpRequest.getUserPasswd(), "Admin")));
 		employeeRepo.save(emp);
 		return ResponseEntity.ok("User registered successfully!");
 	}
